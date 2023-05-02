@@ -43,6 +43,9 @@ var Main = /** @class */ (function () {
     Main.prototype.checkAdmin = function (user) {
         return user.getUsername() === "admin";
     };
+    Main.prototype.singIn = function (username, password) {
+        return this.userService.singIn(username, password);
+    };
     return Main;
 }());
 exports.Main = Main;

@@ -23,6 +23,7 @@ var UserService = /** @class */ (function () {
         }
         newUser.setId(++this.idGenerator);
         this.users.push(newUser);
+        // this.users.push(`${this.idGenerator}. ${JSON.stringify(newUser)}`);
     };
     UserService.prototype.singIn = function (username, password) {
         for (var _i = 0, _a = this.users; _i < _a.length; _i++) {
@@ -40,7 +41,7 @@ var UserService = /** @class */ (function () {
         this.add(user);
     };
     UserService.prototype.getUsersList = function () {
-        return "".concat(this.idGenerator++, ":") + this.users;
+        return this.users;
     };
     return UserService;
 }());

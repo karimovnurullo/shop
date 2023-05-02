@@ -5,7 +5,7 @@ import { Laptop } from './Model/Products/laptop';
 import { Monitor } from './Model/Products/Monitor';
 import { Phone } from './Model/Products/Phone';
 import { UserService } from './Secvices/UserService';
-import { ProductService } from './Secvices/ProductService';
+import { ProductService, ProductType } from './Secvices/ProductService';
 
 
 export class Main {
@@ -28,7 +28,7 @@ export class Main {
    getUsersList() {
       return this.userService.getUsersList();
    }
-   showProducts(type: string) {
+   showProducts(type: ProductType) {
       return this.productService.getProductsByType(type);
    }
    signUp(name: string, username: string, password: string) {
@@ -37,5 +37,7 @@ export class Main {
    checkAdmin(user: User) {
       return user.getUsername() === "admin";
    }
-
+   singIn(username: string, password: string){
+      return this.userService.singIn(username, password);
+   }
 }
